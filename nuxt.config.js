@@ -29,10 +29,12 @@ module.exports = {
   css: [
   ],
 
-  /*
-  ** Plugins to load before mounting the App
-  */
+  /**
+   * 该选项为配置插件
+   * 可以配置只在 Vue 实例中使用，也可以配置在服务端使用，也可以联合注入(Vue实例和服务端同时使用)
+   */
   plugins: [
+    '~/plugins/axiosPlugin.js'
   ],
 
   /*
@@ -53,6 +55,9 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    // 有一个值得注意的问题是，如果我们在另外一个页面内也引用了 axios，
+    // 那么在应用打包发布的时候 axios 会被打包两次，而实际上我们只需要打包一次，所以配置vendor
+    vendor: ['axios'],
     /*
     ** You can extend webpack config here
     */
