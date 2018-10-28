@@ -9,7 +9,7 @@ module.exports = {
   hostName: process.env.HOST_NAME,
   mongodb: process.env.MONGODB,
   session: {
-    key: 'iamkunyamall',
+    key: 'descount_mall',
     maxAge: 86400000
   }
 }

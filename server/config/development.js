@@ -9,7 +9,7 @@
    host: '127.0.0.1',
    mongodb: 'mongodb://localhost:27017/Mall',
    session: {
-     key: 'koanuxtssr',
+     key: 'descount_mall',
      maxAge: 86400000
    }
  }

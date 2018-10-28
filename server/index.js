@@ -4,8 +4,9 @@ const consola = require('consola') // 彩色的console.log
 const { Nuxt, Builder } = require('nuxt')
 const router = require('./routers')
 const bodyParser = require('koa-bodyparser')
+const session = require('koa-session')
 const connectDB = require('./lib/connectDB') // 连接数据库
-const sConfig = require('./config/config')
+const sConfig = require('./config/config') // 配置文件
 
 const app = new Koa()
 // const host = process.env.HOST || '127.0.0.1'
@@ -13,7 +14,7 @@ const app = new Koa()
 const host = sConfig.host
 const port = sConfig.port
 
-consola.log('current env:' + app.env)
+consola.log('app.env:' + app.env)
 
 // 导入并设置 Nuxt.js 选项
 let config = require('../nuxt.config.js')
@@ -32,6 +33,14 @@ async function start() {
   
   // post解析
   app.use(bodyParser())
+
+  // session
+  app.keys = ['discountMall']
+  app.use(session({
+    key: sConfig.session.key,
+    maxAge: sConfig.session.maxAge
+  }, app))
+
   // 路由
   // router(app) // 另一种写法的路由使用
   app.use(router.routes(), router.allowedMethods())

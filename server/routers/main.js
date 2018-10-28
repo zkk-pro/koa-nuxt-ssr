@@ -12,5 +12,7 @@ router.get('/goodsList', async ctx => {
 })
 // 注册
 router.post('/signup', main.signup)
+// 登录
+router.post('/signin', main.signin)
 
 module.exports = router
