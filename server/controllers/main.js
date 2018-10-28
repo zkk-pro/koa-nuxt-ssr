@@ -6,10 +6,11 @@ const rs = require('../lib/resData')
 
 module.exports = {
   async signup (ctx, _next) {
-    let {username, email, password, repassword } = ctx.request.body
 
+    console.log(ctx.session)
+    let {username, email, password, repassword, idCode } = ctx.request.body
+    console.log(ctx.request.body)
     if (Util.illegalCharacter(username)) {
-      console.log(rs.resData)
       return ctx.body = await rs({msg: '非法用户名'})
     }
 
@@ -25,6 +26,11 @@ module.exports = {
     // 判断两次输入的密码是否一致
     if (password !== repassword) {
       return ctx.body = await rs({msg: '两次输入的密码不一致'})
+    }
+
+    // 判断验证码，不区分大小写
+    if (idCode.toUpperCase() !== ctx.session.captcha.toUpperCase()) {
+      return ctx.body = await rs({msg: '验证码输入错误'})
     }
 
     const salt = await bcrypt.genSalt(10) // 生成盐
