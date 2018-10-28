@@ -36,6 +36,9 @@
 
 <script>
 export default {
+  async asyncData(ctx) {
+  },
+
   data() {
     return {
       username: '',
@@ -49,14 +52,11 @@ export default {
       let { username, email, password, repassword } = this
       let { data } = await this.$axios.post('/api/signup', { username, email, password, repassword })
       if (data.code === 1000) {
-        alert(data.msg)
-        setTimeout(() => {
-          window.location.href = '/signin'
-        }, 1500)
+        window.location.href = '/signin'
       } else {
         alert(data.msg)
       }
-    }
+    },
   }
 }
 </script>

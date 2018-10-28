@@ -14,5 +14,7 @@ router.get('/goodsList', async ctx => {
 router.post('/signup', main.signup)
 // 登录
 router.post('/signin', main.signin)
+// 获取图片验证码
+router.get('/captcha', main.captcha)
 
 module.exports = router

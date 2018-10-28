@@ -60,5 +60,11 @@ module.exports = {
     } else {
       ctx.body = await rs({msg: '邮箱或密码错误'})
     }
+  },
+
+  async captcha(ctx, _nuxt) {
+    let c = Util.captcha()
+    ctx.session.captcha = c.text
+    ctx.body = c.data
   }
 }

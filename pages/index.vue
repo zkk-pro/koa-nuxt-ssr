@@ -1,6 +1,6 @@
 <template>
   <section class="container">
-    {{ user}}
+    {{ user }}
 
     <a href="/signup">去注册</a>
     
