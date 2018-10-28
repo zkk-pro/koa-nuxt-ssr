@@ -12,6 +12,11 @@ export default {
   async asyncData(ctx) {
     const { data } = await ctx.app.$axios.get('http://127.0.0.1:3000/api/goodsList')
     return { user: data }
+  },
+  data () {
+    return {
+      
+    }
   }
 }
 </script>
