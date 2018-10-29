@@ -71,6 +71,6 @@ module.exports = {
   async captcha(ctx, _nuxt) {
     let c = Util.captcha()
     ctx.session.captcha = c.text
-    ctx.body = c.data
+    ctx.body = await rs({code: 1000, msg: '获取成功', data: c.data})
   }
 }

@@ -69,7 +69,7 @@ export default {
     changeCaptcha() {
       this.$axios.get('/api/captcha').then(res => {
         if(res.data.code === 1000) {
-          this.$emit('update:captcha', res.data)
+          this.$emit('update:captcha', res.data.data)
         } else {
           alert(res.data.msg)
         }

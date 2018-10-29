@@ -2,7 +2,7 @@
   <nav>
     <ul>
       <li v-for="(item, index) in nav" :key="index">
-        <nuxt-link :to="item.path" :class="{ active: active === index }">{{ item.name }}</nuxt-link>
+        <nuxt-link :to="item.path" :class="{ active: active === index }" @click.native="currentNav(index)">{{ item.name }}</nuxt-link>
       </li>
     </ul>
   </nav>
@@ -19,6 +19,11 @@ export default {
         {name:'九块九包邮', path: '/'}
       ],
       active: 0,
+    }
+  },
+  methods: {
+    currentNav(index) {
+      this.active = index
     }
   }
 }
@@ -39,26 +44,21 @@ nav {
         display: inline-block;
         height: 100%;
         width: 100%;
+        height: 40px;
         line-height: 40px;
         text-align: center;
         color: #fff;
         font-weight: 400;
 
         &.active {
-          background: #ee7711;
+          background: #fd8104;
           font-weight: 600;
         }
       }
       &:hover a {
         text-decoration: none;
-        color: #ee7711;
+        border-bottom: 2px solid #fd8104;
         font-weight: 600;
-      }
-      &:nth-child(1) {
-        width: 200px;
-      }
-      &:nth-child(2) {
-        margin-left: 30px;
       }
     }
   }

@@ -3,9 +3,9 @@
     <div class="container top-box">
       <div class="top-left">正品好货 | 人工精选 | 内部领券 | 全场包邮，尽在聚淘网🚀</div>
       <div class="top-right">
-        <nuxt-link to="/login">亲，请登录</nuxt-link>
+        <nuxt-link :to="{path: '/login', query: {mark: 'Login'}}">亲，请登录</nuxt-link>
         <span>或</span>
-        <nuxt-link to="/login">免费注册</nuxt-link>
+        <nuxt-link :to="{path: '/login', query: {mark: 'Register'}}">免费注册</nuxt-link>
         <nuxt-link to="/" class="left-spance">联系我们</nuxt-link>
         <nuxt-link to="/" class="left-spance">商家合作</nuxt-link>
       </div>

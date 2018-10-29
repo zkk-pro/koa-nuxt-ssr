@@ -7,7 +7,9 @@
             <span :class="active === 'Login' ? 'active' : ''" @click="btnTap(1)">登录</span>
             <span :class="active === 'Register' ? 'active' : ''" @click="btnTap(2)">注册</span>
           </div>
-          <component :is="active" :captcha.sync="c"></component>
+          <keep-alive>
+            <component :is="active" :captcha.sync="c"></component>
+          </keep-alive>
         </div>
       </div>
     </div>
@@ -19,7 +21,7 @@ import Register from "~/components/register";
 export default {
   async asyncData(ctx) {
     const c = await ctx.app.$axios.get('http://127.0.0.1:3000/api/captcha')
-    return {c: c.data}
+    return {c: c.data.data}
   },
   data() {
     return {
@@ -46,6 +48,12 @@ export default {
         this.active = "Register";
         this.login_or_register = "注册";
       }
+      this.$router.push({query: {mark: this.active}})
+    }
+  },
+  created () {
+    if (Object.keys(this.$route.query).length) {
+      this.active = this.$route.query.mark
     }
   }
 };
