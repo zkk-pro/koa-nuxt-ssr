@@ -1,6 +1,7 @@
 <template>
   <nav>
     <ul>
+      <li class="nav-title">主题选区</li>
       <li v-for="(item, index) in nav" :key="index">
         <nuxt-link :to="item.path" :class="{ active: active === index }" @click.native="currentNav(index)">{{ item.name }}</nuxt-link>
       </li>
@@ -16,9 +17,9 @@ export default {
         {name:'精选', path: '/'}, 
         {name:'每日上新', path: '/'}, 
         {name:'人气商品', path: '/'}, 
-        {name:'九块九包邮', path: '/'}
+        {name:'9块9包邮', path: '/'}
       ],
-      active: 0,
+      active: -1,
     }
   },
   methods: {
@@ -37,28 +38,32 @@ nav {
   ul {
     width: 1200px;
     margin: 0 auto;
+    & li:first-child {
+      width: 200px;
+      background: #ff5000;
+      color: #fff;
+    }
     li {
         float: left;
         width: 120px;
+        height: 100%;
+        line-height: 40px;
+        text-align: center;
+        font-weight: 700;
       a {
         display: inline-block;
         height: 100%;
         width: 100%;
         height: 40px;
-        line-height: 40px;
-        text-align: center;
+        // line-height: 40px;
         color: #fff;
-        font-weight: 400;
-
         &.active {
           background: #fd8104;
-          font-weight: 600;
         }
       }
       &:hover a {
         text-decoration: none;
         border-bottom: 2px solid #fd8104;
-        font-weight: 600;
       }
     }
   }

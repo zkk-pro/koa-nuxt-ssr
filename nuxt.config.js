@@ -27,7 +27,11 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    '~/assets/common.less'
+    '~/assets/common.less',
+    'element-ui/packages/theme-chalk/lib/button.css',
+    'element-ui/packages/theme-chalk/lib/pagination.css',
+    'element-ui/packages/theme-chalk/lib/carousel.css',
+    'element-ui/packages/theme-chalk/lib/carousel-item.css',
   ],
 
   /**
@@ -35,7 +39,8 @@ module.exports = {
    * 可以配置只在 Vue 实例中使用，也可以配置在服务端使用，也可以联合注入(Vue实例和服务端同时使用)
    */
   plugins: [
-    '~/plugins/axiosPlugin.js'
+    '~/plugins/axiosPlugin.js',
+    '~/plugins/element-ui.js'
   ],
 
   /*
@@ -64,6 +69,15 @@ module.exports = {
     */
     extend(config, ctx) {
       
+    },
+    // element-ui 按需加载配置
+    babel: {
+      plugins: [
+        ['component', {
+          'libraryName': 'element-ui',
+          'styleLibraryName': 'theme-chalk'
+        }]
+      ]
     }
   }
 }

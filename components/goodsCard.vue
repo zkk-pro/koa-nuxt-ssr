@@ -30,29 +30,35 @@ export default {};
 
 <style lang="less" scoped>
 .card {
-  width: 260px;
+  width: 285px;
   background: #fff;
-  // padding-bottom: 10px;
-  margin: 20px 20px 0 0;
+  &:nth-child(n+5) {
+    margin-top: 20px;
+  }
+  &:not(:nth-child(4n)) {
+    margin-right: 20px;
+  }
   &:hover {
     box-shadow: 2px 2px 4px #ddd;
   }
   .preview {
-    width: 260px;
+    width: 285px;
     height: 260px;
     overflow: hidden;
     cursor: pointer;
+    transition: all 0.8s;
     &:hover img {
-      transition: all 0.8s;
       transform: scale(1.2)
     }
     img {
       width: 100%;
       height: 100%;
+      transition: all 1s;
     }
   }
   .goods-info {
     padding: 0 10px;
+    border: 1px solid #ddd;
   }
   .name {
     line-height: 16px;
@@ -142,27 +148,5 @@ export default {};
       color: #fff;
     }
   }
-  // .coupon-btn {
-  //   position: relative;
-  //   height: 42px;
-  //   margin-top: 10px;
-  //   span {
-  //     background: #FFA248;
-  //     color: #fff;
-  //     font-size: 14px;
-  //     position: absolute;
-  //     top: 0;
-  //     right: 0;
-  //     padding: 6px;
-  //     font-weight: 500;
-  //     border-radius: 4px;
-  //     cursor: pointer;
-  //     &:hover {
-  //       background: #fd8104;
-  //       transform: scale(1.1);
-  //       transition: all .5s;
-  //     }
-  //   }
-  // }
 }
 </style>
