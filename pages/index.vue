@@ -10,7 +10,8 @@
       <div class="goods-box">
         <h2 class="classify">/ 精选好货 /</h2>
         <div class="goods-list">
-          <GoodsCard  v-for="item in 40" :key="item"/>
+          <!-- <GoodsCard  v-for="item in 1" :key="item"/> -->
+          <GoodsItem  v-for="item in 40" :key="item" />
         </div>
       </div>
       <div class="page">
@@ -32,6 +33,7 @@ import Nav from '~/components/nav'
 import GoodsCard from '~/components/goodsCard'
 import Footer from '~/components/footer'
 import Banner from '~/components/banner'
+import GoodsItem from '~/components/goodsItem'
 
 export default {
   async asyncData(ctx) {
@@ -43,7 +45,7 @@ export default {
       
     }
   },
-  components: { Header, Nav, GoodsCard, Footer, Banner }
+  components: { Header, Nav, GoodsCard, Footer, Banner, GoodsItem }
 }
 </script>
 
@@ -62,6 +64,7 @@ export default {
 }
 .goods-list {
   display: flex;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 .page {
