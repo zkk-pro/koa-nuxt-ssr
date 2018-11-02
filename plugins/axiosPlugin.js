@@ -7,9 +7,10 @@
 import axios from 'axios'
 
 const port = process.env.NODE_ENV === 'development' ? 3000 : 3302
+const base_url = process.env.NODE_ENV === 'development' ? 'http://127.0.0.1:' + 3000 : 'http://www.mynsy.club'
 
 const request = axios.create({
-  baseURL: 'http://127.0.0.1:' + port,
+  baseURL: base_url,
   timeout: 5000
 })
 
