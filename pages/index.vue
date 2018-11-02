@@ -5,7 +5,6 @@
     <section class="container">
       <div class="banner-box">
         <Banner></Banner>
-
       </div>
       <div class="goods-box">
         <h2 class="classify">/ 精选好货 /</h2>
@@ -37,7 +36,7 @@ import GoodsItem from '~/components/goodsItem'
 
 export default {
   async asyncData(ctx) {
-    const { data } = await ctx.app.$axios.get('http://127.0.0.1:3000/api/goodsList')
+    const { data } = await ctx.app.$axios.get('/api/goodsList')
     return { user: data }
   },
   data () {

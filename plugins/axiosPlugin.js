@@ -6,6 +6,13 @@
 
 import axios from 'axios'
 
+const port = process.env.NODE_ENV === 'development' ? 3000 : 3302
+
+const request = axios.create({
+  baseURL: 'http://127.0.0.1:' + port,
+  timeout: 5000
+})
+
 export default ({ app }, inject) => {
-  inject('axios', axios)
+  inject('axios', request)
 }

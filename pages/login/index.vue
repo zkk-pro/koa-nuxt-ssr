@@ -20,7 +20,7 @@ import Login from "~/components/login";
 import Register from "~/components/register";
 export default {
   async asyncData(ctx) {
-    const c = await ctx.app.$axios.get('http://127.0.0.1:3000/api/captcha')
+    const c = await ctx.app.$axios.get('/api/captcha')
     return {c: c.data.data}
   },
   data() {
