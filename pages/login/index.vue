@@ -29,7 +29,7 @@ export default {
       email: "",
       password: "",
       repassword: "",
-      active: "Login",
+      active: "Register",
       login_or_register: "登录"
     };
   },

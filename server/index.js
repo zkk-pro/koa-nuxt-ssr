@@ -5,6 +5,7 @@ const { Nuxt, Builder } = require('nuxt')
 const router = require('./routers')
 const bodyParser = require('koa-bodyparser')
 const session = require('koa-session')
+const log4js = require('log4js')
 const connectDB = require('./lib/connectDB') // 连接数据库
 const sConfig = require('./config/config') // 配置文件
 
@@ -15,6 +16,8 @@ const host = sConfig.host
 const port = sConfig.port
 
 consola.log('app.env:' + app.env)
+
+
 
 // 导入并设置 Nuxt.js 选项
 let config = require('../nuxt.config.js')
@@ -30,7 +33,21 @@ async function start() {
     const builder = new Builder(nuxt)
     await builder.build()
   }
-  
+
+  // 日志
+  log4js.configure({
+    appenders: {
+        cheese: {
+            type: 'dateFile', // 日志类型 
+            filename: `log/task`,  // 输出的文件名
+            pattern: '-yyyy-MM-dd.log',  // 文件名增加后缀
+            alwaysIncludePattern: true   // 是否总是有后缀名
+        }
+    },
+    categories: { default: { appenders: ['cheese'], level: 'error' } }
+})
+
+
   // post解析
   app.use(bodyParser())
 
