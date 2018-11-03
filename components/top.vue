@@ -1,7 +1,7 @@
 <template>
   <div class="top">
     <div class="container top-box">
-      <div class="top-left">正品好货 | 人工精选 | 内部领券 | 全场包邮，尽在聚淘网🚀</div>
+      <div class="top-left">正品好货 | 人工精选 | 内部领券 | 全场包邮，尽在大有折扣网🚀</div>
       <div class="top-right">
         <nuxt-link :to="{path: '/login', query: {mark: 'Login'}}">亲，请登录</nuxt-link>
         <span>或</span>

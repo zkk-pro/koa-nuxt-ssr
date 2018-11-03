@@ -2,7 +2,7 @@
   <header>
     <div class="box">
       <div class="logo">
-        <h1>淘宝网</h1>
+        <h1>大有折扣网</h1>
       </div>
       <div class="search">
         <input type="text" id="search" placeholder="请输入您想要搜索的商品名称">

@@ -2,7 +2,7 @@
   <footer>
     <div class="footer"></div>
     <div class="copyright">
-      <p><a href="/">xxx折扣网</a>&nbsp;<a href="http://www.miitbeian.gov.cn/" target="_blank">京ICP备14022556号-3</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright © 2017-2018&nbsp;帅哥&nbsp;版权所有</p>
+      <p><a href="/">大有折扣网</a>&nbsp;<a href="http://www.miitbeian.gov.cn/" target="_blank">京ICP备14022556号-3</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright © 2017-2018&nbsp;大有折扣网版权所有</p>
     </div>
   </footer>
 </template>
