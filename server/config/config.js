@@ -17,7 +17,7 @@
 
 const port = process.env.NODE_ENV === 'development' ? 3000 : 3302
 const mongodbUrl = process.env.NODE_ENV === 'development' 
-  ? 'mongodb://localhost:27017/Mall'
+  ? 'mongodb://192.168.0.2:27017/Mall'
   : 'mongodb://dev:dev123@119.29.149.100:27017/Mall'
 
 module.exports = config = {
