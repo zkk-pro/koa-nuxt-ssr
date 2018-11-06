@@ -1,14 +1,21 @@
 <template>
   <div>
-    <Top />
+    <Top :showSignin.sync="showSignin"/>
     <nuxt :key="key" />
+    <SigninPop :showSignin.sync="showSignin"/>
   </div>
 </template>
 <script>
-import Top from '../components/top'
+import Top from '~/components/top'
+import SigninPop from '~/components/singinPop'
 
 export default {
-  components: { Top },
+  data() {
+    return {
+      showSignin: true
+    }
+  },
+  components: { Top, SigninPop },
   // 页面切换时并不会触发vue的created或者mounted钩子，
   // 官方说可以通过watch $route的变化来做处理，但其实说真的还是蛮麻烦的
   // 可以简单的在 router-view上加上一个唯一的key，

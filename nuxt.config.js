@@ -28,6 +28,7 @@ module.exports = {
   */
   css: [
     '~/assets/common.less',
+    '~/assets/iconfont/iconfont.css',
     'element-ui/packages/theme-chalk/lib/button.css',
     'element-ui/packages/theme-chalk/lib/pagination.css',
     'element-ui/packages/theme-chalk/lib/carousel.css',

@@ -1,0 +1,29 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<!--
+2013-9-30: Created.
+-->
+<svg>
+<metadata>
+Created by iconfont
+</metadata>
+<defs>
+
+<font id="iconfont" horiz-adv-x="1024" >
+  <font-face
+    font-family="iconfont"
+    font-weight="500"
+    font-stretch="normal"
+    units-per-em="1024"
+    ascent="896"
+    descent="-128"
+  />
+    <missing-glyph />
+    
+    <glyph glyph-name="pc-qingchu" unicode="&#58891;" d="M491.373714 456.411429L310.345143 637.366857a36.571429 36.571429 0 1 1-51.712-51.712L439.588571 404.626286 258.633143 223.670857a36.571429 36.571429 0 1 1 51.712-51.712l181.028571 180.955429 180.955429-180.955429a36.571429 36.571429 0 1 1 51.712 51.712L543.085714 404.626286l180.955429 181.028571a36.571429 36.571429 0 1 1-51.712 51.712L491.373714 456.411429zM512-128A512 512 0 1 0 512 896a512 512 0 0 0 0-1024z"  horiz-adv-x="1024" />
+
+    
+
+
+  </font>
+</defs></svg>
